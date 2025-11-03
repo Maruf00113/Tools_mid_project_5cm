@@ -541,7 +541,7 @@ function renderReviews(review)
           div.className = "bg-gray-500 p-10 text-black m-10 rounded-lg w-[400px] flex-shrink-0";
           div.innerHTML = `
           <div class="flex items-center gap-2 text-white">
-               <img src="photo/image10.png" alt="" class=" w-15 rounded-full">
+               <img src="photo/dummy-image.webp" alt="" class=" w-15 rounded-full">
                <p>${r.user.fullName}</p>
           </div>
           <p class="text-2xl mt-[30px]">${r.body}</p>
