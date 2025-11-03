@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+    <head>  
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+     <script src="https://kit.fontawesome.com/53a1a740ca.js" crossorigin="anonymous"></script>
+
+    <title>Meow shop</title>
+    </head>
+    <body id="body" class="bg-slate-900 text-gray-50">
+        <!-- nav bar -->
+        <section>
+        <nav id="navbar" class="z-100000000">    
+            <div>
+                <p id="shop_name"></p>
+            </div>
+            <div id="nav_right" >
+                <a href="#home">Home</a>
+                <a href="#Pro">Product</a>
+                <a href="#review">Review</a>
+                <a href="#contact">contact</a> 
+                <a id="night_name" onclick="night()">Night</a>
+            </div>
+        </nav>
+        </section>
+        <section> 
+        ///slide bar
+        <div id="home" class=" w-full pt-10 " data-carousel="slide"> 
+        <div class="relative h-140 overflow-hidden rounded-lg ">
+            <div class="hidden duration-700 " data-carousel-item>
+                <img src="./photo/image1.png" class="absolute block w-120 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-110" >
+            </div>
+            <div class="hidden duration-700" data-carousel-item>
+                <img src="./photo/image2.png" class="absolute block w-120 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-110"  >
+            </div>
+            <div class="hidden duration-700" data-carousel-item>
+                <img src="./photo/image3.png" class="absolute block w-120 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-110" >
+            </div>
+            <div class="hidden duration-700" data-carousel-item>
+                <img src="./photo/image4.png" class="absolute block w-120 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-110" >
+            </div>
+            <div class="hidden duration-700" data-carousel-item>
+                <img src="./photo/image5.png" class="absolute block w-120 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-110" >
+            </div>
+        </div>
+        
+    <!-- product -->
+    <section id="Pro">
+        <div >
+            <p class="text-3xl py-10">Product</p>
+            <!-- product left part -->
+            <div class="sm:flex sm:justify-between sm:gap-8 sm:px-10 items-start">
+                <div id="product_left" class="h-200 items-center text-center w-100 px-5 bg-gray-50 rounded-md text-xl mb-10 text-gray-950 pb-5 sm:text-xl xl:text-2xl lg:sticky lg:top-20 sm:sticky sm:top-20 border-0 shadow">
+                    <p>My Card</p>
+                    <div class="flex justify-between">
+                        <p>Balance : &nbsp&nbsp</p>
+                        <p id="bal">1000$</p> 
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Total product : &nbsp&nbsp</p>
+                        <p id="total_product">0$</p> 
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Total cost :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p id="cost">0$</p> 
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Delivery :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p id="d_cost">0$</p> 
+                    </div>
+                    <div class="flex justify-between">
+                        <p>Total :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p id="t_cost">0$</p> 
+                    </div>
+                    
+                    <button id="od" onclick="order()" class="bg-yellow-500 rounded-md px-30 py-2 hover:scale-105 duration-300">Order Now</button>
+                    <p id="order_congo">&nbsp</p>
+                    <div class="bg-yellow-500 rounded-md">
+                        <p>If your cost is more then 200<br>then you will get 4% discount</p>
+                        <p>&nbsp</p>
+                        <p>If your cost is more then 500<br>then you will get 8% discount</p>
+                    </div>
+                    <p class="py-4">filter</p>
+                    <div class="flex jestify-center gap-2">
+                        <p>Rating :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <button onclick="ra()" class="bg-yellow-500 py-1 px-6 rounded-md hover:scale-105 duration-300">asc</button>
+                        <button onclick="rd()" class="bg-yellow-500 py-1 px-6 rounded-md hover:scale-105 duration-300">dsc</button>
+                    </div>
+                    <div class="flex jestify-center gap-2 my-3">
+                        <p>Price :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <button onclick="pa()" class="bg-yellow-500 py-1 px-6 rounded-md hover:scale-105 duration-300">asc</button>
+                        <button onclick="pd()" class="bg-yellow-500 py-1 px-6 rounded-md hover:scale-105 duration-300">dsc</button>
+                    </div>
+                    <div class="text-center">
+                        <button onclick="normal()" class="bg-yellow-500 rounded-md px-40 py-2 hover:scale-105 duration-300">reset</button>
+                    </div >
+                    <div class="flex justify-center my-1 gap-1">
+                        <input id="target" class="border-1 w-63">
+                        <button onclick="search()" class="bg-yellow-500 py-1 px-3 rounded-md hover:scale-105 duration-300">search</button>
+                    </div>
+                    <div class="flex justify-center gap-2 mb-1 mt-4">
+                        <input id="start" class="border-1 w-43">
+                        <input id="end" class="border-1 w-43">
+                    </div>
+                    <button onclick="range_price()" class="bg-yellow-500 px-30 py-2 hover:scale-105 duration-300">price filter</button>
+                </div>
+                <!-- product right part -->
+                <div id = "product_right" class="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 h-auto gap-5 lg:gap-15 2xl:gap-25"></div>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+    <!-- review section -->
+     <section id="review" class="pt-40">
+        <div class="text-5xl text-center mb-10">
+        Reviews
+     </div>
+    <div id="reviews" class="overflow-x-auto scroll-smooth flex mb-20 "> </div>
+     </section>
+
+    <!-- contact section -->
+     <section id="contact" class="bg-gray-800 text-white rounded-lg text-center pt-20">
+        <div class="text-center">
+            <p class="text-5xl pt-[50px] mb-[10px]">
+                Contact with us
+            </p>
+            <p class="mb-[40px]">
+                let us know how we can help
+            </p>
+        </div>
+        <div id="form" class="inline-block p-10 m-10 rounded-lg text-black bg-slate-900 sm:w-250 ">
+
+            <form action="/submit" method="post" class="">
+                <p class="text-center mb-6">Sent us message</p>
+                <label for="name" >Name: </label>
+                <input type="text" name="name" id="name" class="border-1 p-2 w-40 sm:w-180 bg-white rounded-md sm:my-1 sm:py-3" placeholder="Enter your name">
+                <br>
+                <label for="mail">Email:</label>
+                <input type="text" name="mail" id="mail" class="border-1 w-40 sm:w-180 sm:w-180 bg-white rounded-md sm:my-1 sm:py-3" placeholder="Enter your email id">
+                <br>
+                <label for="message">Massage:</label>
+                <textarea name="message" id="message" class="mt-5 border-1 w-45 sm:w-175 bg-white rounded-md sm:my-1 sm:py-3"></textarea>
+                <br>
+                <button type="button" onclick="message_submit()" class="bg-white text-black p-3 rounded-xl mt-10   hover:bg-gray-400 cursor-pointer">
+                    submit
+                </button>
+                <div id="show_message" class="mt-5 animate-bounce ml-10">
+    
+                </div>
+            </form>
+        </div>
+        <div class="flex flex-wrap gap-10 justify-evenly pb-20 pt-10">
+            <div id="box1"  class="bg-white text-black p-5 rounded-lg shadow-lg border-2">
+                <img class="h-10 w-10 mb-5" src="photo/bubble-chat.png" alt="">
+                <div class="mb-[50px]">
+                    <div class="bg-blue-200 text-black p-5 rounded-lg">
+                        <p>
+                            Chat with sales --->
+                        </p>
+                        <p class="text-black text-opacity-25">
+                            speak to our friendly team
+                        </p>
+                    </div>
+                </div>
+                <a class="bg-gray-500 p-2 rounded-full text-white hover:bg-blue-500 underline" href="mailto:maruf117155@gmail.com">mail to sales team</a>
+            </div>
+
+            <div id="box2" class="bg-white text-black p-5 rounded-lg shadow-lg border-2">
+                <img class="h-10 w-10 mb-5" src="photo/chat.png" alt="">
+                <div class="mb-[50px]">
+                    <div class="bg-blue-200 text-black p-5 rounded-lg">
+                        <p>
+                            Chat with support --->
+                        </p>
+                        <p class="text-black text-opacity-25">
+                            speak to our support team
+                        </p>
+                    </div>
+                </div>
+                <a class="bg-gray-500 p-2 rounded-full text-white hover:bg-blue-500 underline" href="mailto:maruf117155@gmail.com">mail to support team</a>
+            </div>
+
+            <div id="box3" class="bg-white text-black p-5 rounded-lg shadow-lg border-2 w-65">
+                <img class="h-10 w-10 mb-5" src="photo/location.png" alt="">
+                <div class="mb-[50px]">
+                    <div class="bg-blue-200 text-black p-5 rounded-lg">
+                        <p>
+                            visit us --->
+                        </p>
+                        <p class="text-black text-opacity-25">
+                            visit our office
+                        </p>
+                    </div>
+                </div>
+                <a class="bg-gray-500 p-2 rounded-full text-white hover:bg-blue-500 underline"  target="_blank" href="https://www.google.com/maps/place/International+Islamic+University+Chittagong/@22.496602,91.7184981,17z/data=!3m1!4b1!4m6!3m5!1s0x30ad2777a615585d:0xdcf908f6e4f3a713!8m2!3d22.4965971!4d91.7210784!16zL20vMDkwejU0?entry=ttu&g_ep=EgoyMDI1MTAyOC4wIKXMDSoASAFQAw%3D%3D">View on google map</a>
+            </div>
+
+
+            <div id="box4" class="bg-white text-black p-5 rounded-lg shadow-lg border-2 w-65">
+                <img class="h-10 w-10 mb-5" src="photo/phone-call.png" alt="">
+                <div class="mb-[50px]">
+                    <div class="bg-blue-200 text-black p-5 rounded-lg">
+                        <p>
+                            call us --->
+                        </p>
+                        <p class="text-black text-opacity-25">
+                            24/7 call us
+                        </p>
+                    </div>
+                </div>
+
+                <a class="inline-block bg-gray-500 p-2 rounded-full text-white underline hover:bg-blue-500" href="tel:01690011616">01690011616</a>
+            </div>
+        </div>
+
+     </section>
+     <footer>
+        <div class=" text-xl text-center bg-blue-200 text-black pt-4 pb-4">
+            © 2025 Mywebpage. All rights reserved.
+        </div>
+     </footer>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    </body>
+    
+</html>
